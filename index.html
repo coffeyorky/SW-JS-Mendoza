@@ -1,12 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="información de Star Wars, sus trilogías y hasta guías de lectura">
+    <meta name="keyword" content="star wars, guerra de las galaxias, ciencia ficción, disney, cronología, andor, the mandalorian. boba fett, star wars celebration">
+    <link rel="shotcut icon" href="./img/star wars.jpg" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/8b0d68f728.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Star Wars | información sobre series, películas, novelas, videojuegos, personajes, novedades y mucho más</title>
+  </head>
+  <body>
+    <a id="arriba" href=""></a>
+    <!--inicio-->
+    <header class="inicio">
+      <div>
+      <a href="./index.html"
+      ><img class="logo" src="./img/star-wars-logo.jpg" alt="logo Star Wars"
+    /></a>
+    </div>
+      <section class="in">
+        <nav>
+        <ul class="menu">
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./pages/series.html">Series </a></li>
+          <li><a href="./pages/novedades.html"> Novedades</a></li>
+          <li><a href="./pages/peliculas.html"> Peliculas</a></li>
+          <li><a href="./pages/novelas.html"> Novelas</a></li>
+          <li><a href="./pages/videojuegos.html"> Videojuegos</a></li>
+          <li><a href="./pages/lore.html"> Lore</a></li>
+        </ul>
+         </nav>
+      </section>
+    </header>
+    <div class="menuMobile">
+      <nav class="navbar navbar-dark bg-dark al fixed-top mon">
+      <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <div class="pnl">
+              <div class="spc">
+              <a href="https://twitter.com/starwars?s=20&t=CvfZ7ui7EJ2RwIv6xNd-4Q">
+              <i class="fa-brands fa-twitter" ></i>
+            </a>
+            </div>
+            <div class="spc">
+              <a href="https://www.youtube.com/c/StarWars/featured">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+            <div class="spc">
+              <a href="https://www.facebook.com/starwarsla/?brand_redir=169299103121699">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+            </div>
+            <div class="spc">
+              <a href="https://www.instagram.com/starwars/">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+            <div class="spc">
+              <a href="https://starwars.tumblr.com/">
+                <i class="fa-brands fa-tumblr"></i>
+              </a>
+            </div>
+            <div class="spc">
+              <a href="https://www.starwars.com/">
+                <i class="fa-brands fa-old-republic"></i>
+              </a>
+            </div>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body canvLin">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Inicio</font></font></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./pages/series.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Series</font></font></a>
+                </li>
+                <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="./pages/novedades.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Novedades</font></font></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./pages/peliculas.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Peliculas</font></font></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./pages/novelas.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Novelas</font></font></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./pages/videojuegos.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Videojuegos</font></font></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./pages/lore.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lore</font></font></a>
+                </li>
+          </div>
+          </div>
+            <a class="navbar-brand" href="./index.html"><img class="logoMob" src="./img/star-wars-logob.jpg" alt="logo Star Wars"></a>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+      </div>
+    </nav>
+    </div>
+
     
-</body>
+    <!---inicio--->
+    <!--body-->
+    <main>
+      <section>
+        <div class="pad">
+          <a class="backim" href="#triple">Llevame a las Trilogias</a>
+        </div>
+        
+      <h2>Introduccion</h2>
+      <div class="containerGrid">
+        <p class="uno">
+          George Lucas George Walton Lucas Jr. (Modesto, California; 14 de mayo
+          de 1944), conocido internacionalmente como George Lucas, es un
+          cineasta, escritor, filántropo y empresario estadounidense. Lucas es
+          más conocido por crear las franquicias de Star Wars e Indiana Jones y
+          fundar Lucasfilm, LucasArts e Industrial Light & Magic. Se desempeñó
+          como presidente de Lucasfilm antes de venderlo a The Walt Disney
+          Company en 2012
+        </p>
+        <div class="ord">
+          <img
+          class="dos"
+          src="./img/george.jpg"
+          alt="george Lucas con un traje clon"
+        />
+        <img class="dosmob" src="./img/georgemob.jpg" alt="george Lucas Mob">
+        </div>
+        <div class="moverCentro">
+          <img class="bordes" src="./img/sw.jpg" alt="Star Wars" />
+          <img class="bordesmob" src="./img/swmob.jpg" alt="star wars mobile">
+          <img class="reducir" src="./img/georgelucas.jpg" alt="george lucas" />
+        </div>
+        
+      </div>
+      <div class="margenBox">
+        <p class="box">
+        "Star Wars", conocida también en español como "La guerra de las
+        galaxias", es una franquicia y universo compartido compuesta
+        primordialmente de una serie de películas concebidas por el cineasta
+        estadounidense George Lucas en la década de 1970, y producidas y
+        distribuidas por The Walt Disney Company a partir de 2012. Su trama
+        describe las vivencias de un grupo de personajes que habitan en una
+        galaxia ficticia e interactúan con elementos como «la Fuerza», un campo
+        de energía metafísico y omnipresente que posee un «lado luminoso»
+        impulsado por la sabiduría, la nobleza y la justicia y utilizado por los
+        Jedi, y un «lado oscuro» usado por los Sith y provocado por la ira, el
+        miedo y el odio.
+      </p>
+      </div>
+      
+      </section>
+      
+    </main>
+    <section class="if">
+      <iframe width="660" height="400" src="https://www.youtube.com/embed/PboKpnin_Wg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>Trailer de una de las series mas recientes a estrenarse</p>
+    </section>
+    <!--body-->
+    <div id="triple">
+      <h3 class="colorear">Trilogias</h3>
+    </div>
+    <section class="orden">
+        <div>
+          <img class="trilogiasDes" src="./img/450_1000.jpg" alt="primera-trilogia" />
+          <img class="trilogiasMob" src="./img/450_1000mob.jpg" alt="primera-trilogia">
+          <a href="">Primera Trilogia</a>
+        </div>
+        <div>
+          <img class="trilogiasDes" src="./img/tcw.png" alt="segunda-trilogia" />
+          <img class="trilogiasMob" src="./img/tcwmob.png" alt="segunda-trilogia">
+        <a href="">Segunda Trilogia</a>
+        </div>
+        <div>
+          <img class="trilogiasDes" src="./img/trs.jpg" alt="tercera-trilogia" />
+          <img class="trilogiasMob" src="./img/trsmob.jpg" alt="tercera-trilogia">
+       <a href="">Tercera Trilogia</a>
+      </div>  
+    </section>
+    <h2>Guia de lectura</h2>
+    <section>
+      <div class="guia">
+        <div class="caja">
+        <img src="./img/guia-primeras-novelas-star-wars.jpg" alt="guia novelas starwars">
+        <a href="">Por dónde empezar con las novelas de Star Wars</a>
+      </div>
+      <div class="caja">
+        <img src="./img/guia-lectura-thrawn.jpg" alt="guia novelas del gran almirante thrawn">
+        <a href="">Guía de lectura — Gran Almirante Thrawn</a>
+      </div>
+      <div class="caja">
+        <img src="./img/guia-lectura-old-republic.jpg" alt="guia old republic">
+        <a href="">Guía de lectura — Star Wars: The Old Republic</a>
+      </div>
+      <div class="caja">
+        <img src="./img/guia-lectura-high-republic.jpg" alt="guia new republic">
+        <a href="">Guía de lectura — Star Wars: The High Republic</a>
+      </div>
+      </div>
+    </section>
+    
+    <form class="form">
+      <h4>Recibe nuestras noticias</h4>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Direccion de correo electronico</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Enviame noticias y actualizaciones</label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-form">Enviar</button>
+    </form>
+
+    <footer class="foot">
+      <a href="#arriba"><img src="./img/star-wars-logob.jpg" alt="logo Star Wars Pequeño"></a>
+      <div class="pnlDes">
+        <div class="spcDes">
+        <a href="https://twitter.com/starwars?s=20&t=CvfZ7ui7EJ2RwIv6xNd-4Q">
+        <i class="fa-brands fa-twitter ico" ></i>
+      </a>
+      </div>
+      <div class="spcDes">
+        <a href="https://www.youtube.com/c/StarWars/featured">
+          <i class="fa-brands fa-youtube ico"></i>
+        </a>
+      </div>
+      <div class="spcDes">
+        <a href="https://www.facebook.com/starwarsla/?brand_redir=169299103121699">
+          <i class="fa-brands fa-facebook ico"></i>
+        </a>
+      </div>
+      <div class="spcDes">
+        <a href="https://www.instagram.com/starwars/">
+          <i class="fa-brands fa-instagram ico"></i>
+        </a>
+      </div>
+      <div class="spcDes">
+        <a href="https://starwars.tumblr.com/">
+          <i class="fa-brands fa-tumblr ico"></i>
+        </a>
+      </div>
+      <div class="spcDes">
+        <a href="https://www.starwars.com/">
+          <i class="fa-brands fa-old-republic ico"></i>
+        </a>
+      </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
