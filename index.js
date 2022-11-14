@@ -94,7 +94,7 @@ function mostrarCarrito(){
     precioCarrito += itemsElegidos.precio
   }
 
-  alert("Repasemos: \n" + [productosCarrito] + "\n Por un total de $" + [precioCarrito] + "")
+  alert("Entonces: \n" + [productosCarrito] + "\n Por un total de $" + [precioCarrito] + "")
 }
 
 let llevar = parseInt(
