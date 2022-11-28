@@ -1,26 +1,36 @@
-let nombr = prompt("Ingresa tu nombre");
-alert("Buenas, " + nombr + "!");
-console.log("El nombre del usuario es:" + nombr + "");
+const inputUsuario = document.getElementById("usuario")
+const inputPassword = document.getElementById("password")
+const botonIngresar = document.getElementById("ingresar")
+const divSaludo = document.getElementById("saludo")
+const divLogin = document.getElementById("divLogin")
+
+botonIngresar.onclick = () => {
+  const usuario = {
+    usuario: inputUsuario.value
+  }
+  localStorage.setItem("usuario",JSON.stringify(usuario))
+  divLogin.remove()
+
+  const titSaludo = document.createElement("h4")
+  titSaludo.innerText = "Saludos " + [usuario.usuario]
+  divSaludo.append(titSaludo)
+}
+
 
 class Swmerch {
-  constructor(codigo, nombre, precio, stock) {
-    this.codigo = codigo;
+  constructor(id, nombre, precio) {
+    this.id = id;
     this.nombre = nombre;
     this.precio = precio;
-    this.stock = stock;
-  }
-  restaStock() {
-    this.stock = this.stock - 1;
-    console.log("El stock de " + [this.nombre] + "ha sido actualizado");
   }
 }
 
-const producto0 = new Swmerch(0, "Funko", 200, 100);
-const producto1 = new Swmerch(1, "Comics", 70, 250);
-const producto2 = new Swmerch(2, "Figura Black Series", 90, 10);
-const producto3 = new Swmerch(3, "Coleccionables", 100, 50);
-const producto4 = new Swmerch(4, "Remera Bad batch", 100, 100);
-const producto5 = new Swmerch(5, "Tasa Star wars", 120, 150);
+const producto0 = new Swmerch(0, "Funko", 200);
+const producto1 = new Swmerch(1, "Comics", 70);
+const producto2 = new Swmerch(2, "Figura Black Series", 90);
+const producto3 = new Swmerch(3, "Coleccionables", 100);
+const producto4 = new Swmerch(4, "Remera Bad batch", 100);
+const producto5 = new Swmerch(5, "Tasa Star wars", 120);
 
 const productos = [
   producto0,
@@ -31,155 +41,54 @@ const productos = [
   producto5,
 ];
 
-const carrito = [];
+const divProductos = document.getElementById("divProductos")
+productos.forEach(producto=>{
+  divProductos.innerHTML +=
+  "<div id=" + [producto.id]+ " class=\"card cardProd\">" +
+  "<div class= card-body>" +
+  "<h4 class= card-title>" + [producto.nombre] + "</h4>"+
+  "<p class= card-text>" + [producto.precio] + "</p>" + 
+  "<button id=" + [producto.id]+ " class=\"btn btn-primary\">Agregar</button>" +
+  "</div<"
+  "</div<"
+})
 
-let prod = [
-  {
-    nombre: "Funko",
-    precio: 200,
-  },
-  {
-    nombre: "Comics",
-    precio: 70,
-  },
-  {
-    nombre: "Figura Black Series",
-    precio: 90,
-  },
-  {
-    nombre: "Coleccionables",
-    precio: 90,
-  },
-  {
-    nombre: "Remera Bad Batch",
-    precio: 90,
-  },
-  {
-    nombre: "Tasa Star Wars",
-    precio: 100,
-  },
-];
+const carrito = JSON.parse(localStorage.getItem("carrito")) || []
+console.log(carrito)
+const botonesAgregar = document.querySelectorAll(".btn-primary")
 
-let futRebajas = prod.filter((reb) => reb.precio <= 100);
-
-console.log(futRebajas);
-
-let productosSeleccionados = "Estos son las cosas que podemos ofrecer: ";
-
-function agrCarrito() {
-  for (item of productos) {
-    productosSeleccionados +=
-      "\n" +
-      [item.codigo] +
-      "-" +
-      [item.nombre] +
-      " a tan solo $" +
-      [item.precio];
-  }
-  productosSeleccionados +=
-    "\n Ingrese el nro de Item que desea agregar a su carrito. para finalizar ingrese 99";
-
-  let respuesta = parseInt(prompt(productosSeleccionados));
-
-  while (isNaN(respuesta)) {
-    alert("Por favor ingrese sólo números");
-    respuesta = parseInt(prompt(productosSeleccionados));
-  }
-
-  while (respuesta != 99) {
-    let encontrado = productos.find(falta => falta.stock < 10)
-    if (encontrado != undefined){
-      console.log("Hay productos suficientes");
+botonesAgregar.forEach(boton=>{
+  boton.onclick = () => {
+    const productoSeleccionado = productos.find(
+      (p) => p.id === parseInt(boton.id))
+    const productoCarrito = { ...productoSeleccionado,cantidad: 1 }
+      console.log(productoSeleccionado,productoCarrito)
+    const indexCarrito = carrito.findIndex(
+    (prod) => prod.id === productoCarrito.id
+    )
+    if (indexCarrito === -1) { 
+      carrito.push(productoCarrito)
     } else {
-      console.log("Hay pocas unidades de este producto")
+      carrito[indexCarrito].cantidad++
     }
-    switch (respuesta) {
-      case 0:
-        carrito.push(productos[0]);
-        alert("Agregamos al carrito el producto " + [productos[0].nombre] + "");
-        productos[0].restaStock();
-        break;
-      case 1:
-        carrito.push(productos[1]);
-        alert("Agregamos al carrito el producto " + [productos[1].nombre] + "");
-        productos[1].restaStock();
-        break;
-      case 2:
-        carrito.push(productos[2]);
-        alert("Agregamos al carrito el producto " + [productos[2].nombre] + "");
-        productos[2].restaStock();
-        break;
-      case 3:
-        carrito.push(productos[3]);
-        alert("Agregamos al carrito el producto " + [productos[3].nombre] + "");
-        productos[3].restaStock();
-        break;
-      case 4:
-        carrito.push(productos[4]);
-        alert("Agregamos al carrito el producto " + [productos[4].nombre] + "");
-        productos[4].restaStock();
-        break;
-      case 5:
-        carrito.push(productos[5]);
-        alert("Agregamos al carrito el producto " + [productos[5].nombre] + "");
-        productos[5].restaStock();
-        break;
-      default:
-        alert("No tenemos el producto que elegiste");
-        break;
-    }
-    respuesta = parseInt(prompt(productosSeleccionados));
-  }
-  alert("Cerramos tu pedido");
-  mostrarCarrito();
-}
-
-let productosCarrito = "Vas a llevar: ";
-let precioCarrito = 0;
-
-agrCarrito();
-
-function mostrarCarrito() {
-  for (itemsElegidos of carrito) {
-    productosCarrito += "\n -" + [itemsElegidos.nombre] + "";
-    precioCarrito += itemsElegidos.precio;
-  }
-
-  alert(
-    "Entonces: \n" +
-      [productosCarrito] +
-      "\n Por un total de $" +
-      [precioCarrito] +
-      ""
-  );
-}
-
-let llevar = parseInt(prompt("Tiene un descuento con su compra? 1.Si - 2.No"));
-
-let descuent = false;
-let opcion;
-
-while (descuent === false) {
-  if (llevar === 1) {
-    descuent = true;
-    opcion = "Ingrese su descuento";
-  } else if (llevar === 2) {
-    descuent = true;
-    opcion = "";
-  } else {
-    llevar = parseInt(prompt("Debe elegir una opcion 1.Si - 2.No"));
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    console.log(carrito)
   }
 }
+)
 
-console.log(opcion);
-
-function calcularPrecio(precioCarrito, descuento) {
-  let resultado = precioCarrito / descuento;
-  return resultado;
+const botonFinalizar = document.querySelector("#finalizar")
+ botonFinalizar.onclick = () => {
+   const valores = carrito.map(prod=>prod.precio * prod.cantidad)
+   let totalCompra = 0
+   valores.forEach(valor=>{
+   totalCompra += valor 
+ })
+console.log(totalCompra)
+console.log(valores)
 }
 
-let descuento = parseInt(prompt("Ingrese su descuento"));
-
-let resultadoDiv = calcularPrecio(precioCarrito, descuento);
-console.log(resultadoDiv);
-alert("Su descuento es de: $" + resultadoDiv);
+const botonLimpiar = document.querySelector("#limpiar")
+botonLimpiar.onclick = () => {
+  localStorage.clear(carrito)
+}

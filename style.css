@@ -1,0 +1,9 @@
+.cardProd {
+    width: 200px !important;
+    margin: 5px;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+}
