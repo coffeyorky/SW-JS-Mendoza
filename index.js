@@ -109,7 +109,7 @@ const cargarDolar = () => {
   .then(response => response.json())
   .then(({solidario, ccl, mep, ccb, blue}) => {
   console.log(solidario, ccl, mep, ccb, blue)
-  preDolar.innerHTML +=
+  preDolar.innerHTML =
   "<h2>Cotizaciones del dolar en caso de necesitar conversion</h2>" +
   "<p>Solidario: $" + [solidario] + "</p>" +
   "<p>Blue: $" + [blue] + "</p>" +
@@ -118,8 +118,10 @@ const cargarDolar = () => {
   "<p>CCB: $" + [ccb] + "</p>" 
 })
 }
+
 cargarDolar()
-setInterval (() => { 
+
+setInterval(() => { 
   cargarDolar()
 }, 60000);
 
